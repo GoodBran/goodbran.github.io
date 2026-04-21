@@ -145,10 +145,9 @@ a {
 }
 
 .site-logo {
-  font-family: $font-stack-mozilla;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: $color-orange-50;
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
 }
 
 .site-title-text {
@@ -390,10 +389,19 @@ a {
   }
 
   .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: $font-stack-mozilla;
     font-size: 1.5rem;
     font-weight: 600;
     color: $color-white;
+  }
+
+  .footer-logo {
+    height: 32px;
+    width: 32px;
+    flex-shrink: 0;
   }
 
   .footer-links {

@@ -1,7 +1,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-brand">{{ site.title | escape }}</div>
+      <div class="footer-brand">
+        <img src="{{ "/assets/images/logo.svg" | relative_url }}" alt="{{ site.title | escape }}" class="footer-logo" width="32" height="32">
+        <span>{{ site.title | escape }}</span>
+      </div>
       <nav class="footer-links">
         <a href="{{ "/" | relative_url }}">Home</a>
         <a href="{{ "/blog" | relative_url }}">Blog</a>
