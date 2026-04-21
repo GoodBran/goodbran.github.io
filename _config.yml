@@ -1,11 +1,13 @@
 # Site settings
 title: Goodbran
-email: hello@goodbran.com
+email: bran.liang@icloud.com
 description: >-
-  Writing, publishing, and sharing notes and piano scores.
+  Writing, publishing, and sharing notes.
   A personal blog about coding, music, and creativity.
+# URL settings
+# The GitHub Actions workflow auto-configures the base path during build
+url: ""
 baseurl: ""
-url: "https://goodbran.com"
 
 # Social
 twitter_username: goodbran
