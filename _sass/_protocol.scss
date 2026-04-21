@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:wght@400;500;600;700&display=swap');
+
+// Protocol Design System - Mozilla
+// =================================
+
+// Color Palette
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray-10: #f9f9fa;
+$color-gray-20: #ededf0;
+$color-gray-30: #cdcdd1;
+$color-gray-40: #b1b1bc;
+$color-gray-50: #9595a3;
+$color-gray-60: #52525e;
+$color-gray-70: #42425a;
+$color-gray-80: #202340;
+$color-gray-90: #15141a;
+
+// Brand Colors
+$color-ink-70: $color-gray-90;
+$color-ink-80: #1d1d1d;
+$color-orange-50: #ff7139;
+$color-orange-60: #e25920;
+$color-orange-70: #cc3d00;
+
+// Typography
+$font-stack-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+$font-stack-mozilla: "Zilla Slab", "Inter", serif;
+
+// Base
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-stack-base;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $color-ink-70;
+  background-color: $color-white;
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack-mozilla;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-ink-80;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 0 0 1.25rem 0;
+}
+
+a {
+  color: $color-orange-60;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-orange-70;
+  }
+
+  &:focus {
+    outline: 2px solid $color-orange-50;
+    outline-offset: 2px;
+  }
+}
+
+// Layout
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-narrow {
+  max-width: 720px;
+}
+
+// Site Header
+.site-header {
+  background-color: $color-white;
+  border-bottom: 1px solid $color-gray-20;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: $color-ink-80;
+
+  &:hover {
+    color: $color-ink-80;
+  }
+}
+
+.site-logo {
+  font-family: $font-stack-mozilla;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $color-orange-50;
+}
+
+.site-title-text {
+  font-family: $font-stack-mozilla;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    font-weight: 500;
+    color: $color-gray-70;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+      color: $color-orange-60;
+    }
+
+    &.active {
+      color: $color-orange-60;
+    }
+  }
+}
+
+// Main Content
+.main-content {
+  min-height: calc(100vh - 300px);
+  padding: 3rem 0;
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, $color-gray-10 0%, $color-white 100%);
+  padding: 4rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $color-gray-20;
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: $color-gray-60;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+}
+
+// Blog Grid
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+// Cards (Protocol Style)
+.card {
+  background: $color-white;
+  border-radius: 8px;
+  border: 1px solid $color-gray-20;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: $color-gray-10;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-meta {
+    font-size: 0.875rem;
+    color: $color-gray-50;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .card-title {
+    font-family: $font-stack-mozilla;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+
+    a {
+      color: $color-ink-80;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-orange-60;
+      }
+    }
+  }
+
+  .card-description {
+    color: $color-gray-60;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Article Styles
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+
+  .article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-gray-20;
+  }
+
+  .article-title {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .article-meta {
+    color: $color-gray-50;
+    font-size: 0.95rem;
+
+    .date {
+      font-weight: 500;
+    }
+  }
+
+  .article-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+
+    h2 {
+      font-size: 1.875rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    pre {
+      background: $color-gray-10;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    code {
+      background: $color-gray-20;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    blockquote {
+      border-left: 4px solid $color-orange-50;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      color: $color-gray-60;
+      font-style: italic;
+    }
+
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: $color-ink-80;
+  color: $color-gray-30;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+
+  a {
+    color: $color-gray-30;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    font-family: $font-stack-mozilla;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid $color-gray-70;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $color-gray-50;
+  }
+}
+
+// Buttons
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.button-primary {
+    background-color: $color-orange-60;
+    color: $color-white;
+    border-color: $color-orange-60;
+
+    &:hover {
+      background-color: $color-orange-70;
+      border-color: $color-orange-70;
+      color: $color-white;
+    }
+  }
+
+  &.button-secondary {
+    background-color: transparent;
+    color: $color-ink-70;
+    border-color: $color-gray-40;
+
+    &:hover {
+      border-color: $color-orange-60;
+      color: $color-orange-60;
+    }
+  }
+}
+
+// Syntax Highlighting
+.highlight {
+  background: $color-gray-10;
+  border-radius: 8px;
+
+  .c { color: $color-gray-50; font-style: italic } // Comment
+  .k { color: $color-orange-60; font-weight: bold } // Keyword
+  .s { color: #2d8a4e } // String
+  .n { color: $color-ink-70 } // Name
+  .o { color: $color-gray-60 } // Operator
+  .p { color: $color-gray-60 } // Punctuation
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .site-header {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article {
+    .article-title {
+      font-size: 2rem;
+    }
+  }
+
+  .site-footer {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+// Utilities
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

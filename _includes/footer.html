@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">{{ site.title | escape }}</div>
+      <nav class="footer-links">
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/blog" | relative_url }}">Blog</a>
+        <a href="{{ "/about" | relative_url }}">About</a>
+        <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title | escape }}. Built with <a href="https://jekyllrb.com">Jekyll</a>.</p>
+    </div>
+  </div>
+</footer>

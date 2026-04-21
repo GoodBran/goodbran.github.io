@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="container">
+    <h1>{{ site.title | escape }}</h1>
+    <p class="lead">{{ site.description }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <h2 style="font-family: 'Zilla Slab', serif; font-size: 2rem; margin-bottom: 1.5rem;">Recent Posts</h2>
+
+  <div class="blog-grid">
+    {% for post in site.posts limit:6 %}
+      <article class="card">
+        {% if post.cover_image %}
+          <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
+        {% endif %}
+        <div class="card-content">
+          <div class="card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <h3 class="card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {% if post.description %}
+            <p class="card-description">{{ post.description }}</p>
+          {% else %}
+            <p class="card-description">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size > 6 %}
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="{{ "/blog" | relative_url }}" class="button button-secondary">View All Posts</a>
+    </div>
+  {% endif %}
+</div>

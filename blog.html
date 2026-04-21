@@ -1,0 +1,35 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="hero" style="padding: 3rem 0;">
+  <div class="container">
+    <h1 style="font-size: 2.5rem;">All Posts</h1>
+    <p class="lead">Thoughts on coding, music, and creative projects.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-grid">
+    {% for post in site.posts %}
+      <article class="card">
+        {% if post.cover_image %}
+          <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
+        {% endif %}
+        <div class="card-content">
+          <div class="card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <h3 class="card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {% if post.description %}
+            <p class="card-description">{{ post.description }}</p>
+          {% else %}
+            <p class="card-description">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>

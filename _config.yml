@@ -1,0 +1,55 @@
+# Site settings
+title: Goodbran
+email: hello@goodbran.com
+description: >-
+  Writing, publishing, and sharing notes and piano scores.
+  A personal blog about coding, music, and creativity.
+baseurl: ""
+url: "https://goodbran.com"
+
+# Social
+twitter_username: goodbran
+github_username: goodbran
+
+# Build settings
+# No gem theme - using custom Protocol-inspired theme
+theme: null
+plugins:
+  - jekyll-feed
+
+
+
+# Markdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclusions
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - "*.gemspec"
