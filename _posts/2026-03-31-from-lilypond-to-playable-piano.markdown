@@ -3,6 +3,7 @@ layout: post
 title: "From LilyPond to Playable Piano"
 date: 2026-03-31 12:00:00 +0800
 description: "We now compile LilyPond into sheet music, MIDI, MP3, and OGG, then play it right on the score page."
+cover_image: "/assets/images/from-lilypond-to-playable-piano-cover.webp"
 ---
 
 <p>The score pipeline used to stop at display. Today, it goes all the way to sound. A single LilyPond file now compiles into sheet music (SVG, PDF), raw performance data (MIDI), and playable web audio (MP3, OGG) you can listen to right in the browser.</p>

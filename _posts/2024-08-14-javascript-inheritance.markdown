@@ -3,6 +3,7 @@ layout: post
 title: "How does Javascript handles inheritance?"
 date: 2024-08-14 12:00:00 +0800
 description: "I have been programming javascript for years and for sure I used the inheritance features from js. But what a shame that I still don't understand it. And I would like to understand it more by the end of this post."
+cover_image: "/assets/images/javascript-inheritance-cover.webp"
 ---
 
 I have been programming javascript for years and for sure I used the inheritance features from js. But what a shame that I still don't understand it. And I would like to understand it more by the end of this post.

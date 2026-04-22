@@ -3,6 +3,7 @@ layout: post
 title: "Welcome to the New Goodbran Blog"
 date: 2026-04-21 12:00:00 +0800
 description: "Introducing the new Jekyll-powered blog with Mozilla Protocol design system."
+cover_image: "/assets/images/welcome-to-the-new-goodbran-blog-cover.webp"
 ---
 
 The Goodbran blog has been rebuilt from the ground up using [Jekyll](https://jekyllrb.com/) — a static site generator that transforms plain text into static websites and blogs.

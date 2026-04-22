@@ -3,6 +3,7 @@ layout: post
 title: "How to embed an executable server in macos"
 date: 2024-06-28 12:00:00 +0800
 description: "Recently I am trying to learn a bit macos development by building a shadowsocks client based on the existing rust library."
+cover_image: "/assets/images/embed-launchd-server-macos-cover.webp"
 ---
 
 <!-- Image paths may be broken - original images at /assets/images/20240628/ -->

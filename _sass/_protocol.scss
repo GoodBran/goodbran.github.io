@@ -296,6 +296,19 @@ a {
     }
   }
 
+  .article-cover {
+    margin: 0 0 2rem;
+  }
+
+  .article-cover-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid $color-gray-20;
+    background-color: $color-gray-10;
+  }
+
   .article-content {
     font-size: 1.125rem;
     line-height: 1.8;

@@ -3,6 +3,7 @@ layout: post
 title: "How to build a scalable application using Rails?"
 date: 2023-05-27 12:00:00 +0800
 description: "With the growing of your rails application, it is inevitable that more and more functions will be put into a single repo."
+cover_image: "/assets/images/rails-engine-with-packwerk-cover.webp"
 ---
 
 With the growing of your rails application, it is inevitable that more and more functions will be put into a single repo. One way to call it is [The Majestic Monolith](https://m.signalvnoise.com/the-majestic-monolith/). DHH named the category of this kind of rails application. But he didn't provide a standard way to do that, a normal Rails developer will get easily freaked out, there is no more convention for you to follow this time!

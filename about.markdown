@@ -20,4 +20,4 @@ This site is built with:
 
 ## Get in Touch
 
-Feel free to reach out via [email](mailto:hello@goodbran.com) or follow on [GitHub](https://github.com/goodbran).
+Feel free to reach out via [email](mailto:bran.liang@icloud.com) or follow on [GitHub](https://github.com/goodbran).
