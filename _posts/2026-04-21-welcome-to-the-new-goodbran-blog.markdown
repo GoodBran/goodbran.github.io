@@ -38,4 +38,4 @@ Stay tuned for more content!
 
 ---
 
-*This blog is open source. Find a bug or want to suggest an improvement? [Open an issue on GitHub](https://github.com/goodbran/goodbran-lite).*
+*This blog is open source. Find a bug or want to suggest an improvement? [Open an issue on GitHub](https://github.com/goodbran/goodbran.github.io).*
