@@ -85,51 +85,51 @@ $font-stack-mozilla: "Zilla Slab", "Inter", serif;
 // Dark mode variables
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg-body: #{$color-ink-80};
-    --bg-header: #{$color-gray-90};
-    --bg-card: #{$color-gray-80};
-    --bg-hero-start: #{$color-gray-80};
-    --bg-hero-end: #{$color-gray-90};
-    --bg-code: #{$color-black};
-    --bg-code-inline: #{$color-gray-80};
-    --bg-footer: #{$color-black};
+    --bg-body: #0a0a0a;
+    --bg-header: #0d0d0d;
+    --bg-card: #111111;
+    --bg-hero-start: #0f0f0f;
+    --bg-hero-end: #0a0a0a;
+    --bg-code: #000000;
+    --bg-code-inline: #1a1a1a;
+    --bg-footer: #000000;
 
     --text-body: #{$color-gray-30};
-    --text-heading: #{$color-gray-10};
-    --text-muted: #{$color-gray-40};
-    --text-meta: #{$color-gray-50};
+    --text-heading: #e8e8e8;
+    --text-muted: #{$color-gray-50};
+    --text-meta: #{$color-gray-60};
     --text-link: #4dabf7;
     --text-link-hover: #74c0fc;
     --text-nav: #{$color-gray-40};
     --text-nav-active: #4dabf7;
-    --text-footer: #{$color-gray-40};
+    --text-footer: #{$color-gray-50};
     --text-footer-brand: #{$color-white};
 
-    --border-light: #{$color-gray-70};
-    --border-card: #{$color-gray-70};
+    --border-light: #1f1f1f;
+    --border-card: #1a1a1a;
     --border-focus: #{$color-blue-50};
     --border-blockquote: #4dabf7;
 
     --button-primary-bg: #4dabf7;
     --button-primary-border: #4dabf7;
-    --button-primary-text: #{$color-ink-80};
+    --button-primary-text: #0a0a0a;
     --button-primary-bg-hover: #74c0fc;
     --button-primary-border-hover: #74c0fc;
     --button-secondary-bg: transparent;
-    --button-secondary-border: #{$color-gray-60};
+    --button-secondary-border: #2a2a2a;
     --button-secondary-text: #{$color-gray-30};
     --button-secondary-border-hover: #4dabf7;
     --button-secondary-text-hover: #4dabf7;
 
-    --syntax-bg: #{$color-black};
-    --syntax-comment: #{$color-gray-50};
+    --syntax-bg: #000000;
+    --syntax-comment: #52525e;
     --syntax-keyword: #4dabf7;
     --syntax-string: #69db7c;
     --syntax-name: #{$color-gray-30};
     --syntax-operator: #{$color-gray-40};
     --syntax-punctuation: #{$color-gray-40};
 
-    --shadow-card: rgba(0, 0, 0, 0.3);
+    --shadow-card: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -282,6 +282,16 @@ a {
 
     &.active {
       color: var(--text-nav-active);
+    }
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+
+    &:hover {
+      opacity: 0.7;
     }
   }
 }
