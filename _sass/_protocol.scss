@@ -385,6 +385,7 @@ a {
 .article {
   max-width: 720px;
   margin: 0 auto;
+  padding: 2rem 1.5rem;
 
   .article-header {
     margin-bottom: 3rem;
@@ -627,6 +628,8 @@ a {
   }
 
   .article {
+    padding: 1.5rem 1rem;
+
     .article-title {
       font-size: 2rem;
     }
