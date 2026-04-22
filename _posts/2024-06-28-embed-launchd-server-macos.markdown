@@ -41,11 +41,11 @@ codesign -s - -i branliang.Shadoxify.sslocal -o runtime --entitlements sslocal.e
 
 - Prepare the launch agent property list, this actually a bit tricky, for your reference, here is my example configuration
 
-![Launch agent property list configuration](/assets/images/20240628/launch-agent-plist.png)
+![Launch agent property list configuration](/assets/images/20240628/launch-agent-plist.webp)
 
 - Configure the app build phase, make sure both executable and property list are copied to the proper location. Again here is my configuration screenshot for reference.
 
-![Xcode build phase configuration](/assets/images/20240628/xcode-build-phase.png)
+![Xcode build phase configuration](/assets/images/20240628/xcode-build-phase.webp)
 
 ## Next
 

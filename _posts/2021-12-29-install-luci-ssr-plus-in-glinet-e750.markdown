@@ -42,13 +42,13 @@ unzip luci-app-ssr-plus.zip
 
 Luci could be installed in the settings -> advanced.
 
-![Luci installation in advanced settings](/assets/images/glinet-luci-installation.png)
+![Luci installation in advanced settings](/assets/images/glinet-luci-installation.webp)
 
 - Install dependent luci packages
 
 Manual install package `luci-compat`
 
-![Manual install luci-compat package](/assets/images/glinet-luci-compat-install.png)
+![Manual install luci-compat package](/assets/images/glinet-luci-compat-install.webp)
 
 - Install downloaded packages in the ssh session
 
@@ -69,7 +69,7 @@ luci-app-ssr-plus_180-10_all.ipk
 
 - Refresh the luci window and now you should see the sweet luci ssr plus!
 
-![Luci SSR Plus interface](/assets/images/glinet-shadowsocksr-plus.png)
+![Luci SSR Plus interface](/assets/images/glinet-shadowsocksr-plus.webp)
 
 Enjoy!
 
