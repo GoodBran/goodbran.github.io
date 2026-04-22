@@ -3,6 +3,7 @@ layout: post
 title: "HomeAway: A Small CLI for Switching Wi-Fi Modes"
 date: 2026-04-12 12:00:00 +0800
 description: "At home I use a side router and manual Wi-Fi settings. Outside I need DHCP. HomeAway turns that repetitive macOS network shuffle into one command."
+cover_image: "/assets/images/homeaway-cli-switching-wifi-modes-cover.png"
 ---
 
 <blockquote>

@@ -3,6 +3,7 @@ layout: post
 title: "Continuous Deployment with Kamal"
 date: 2026-03-27 12:00:00 +0800
 description: "Push to main, deploy to production. The whole setup in three files and a few secrets."
+cover_image: "/assets/images/continuous-deployment-with-kamal-cover.png"
 ---
 
 <p>This site deploys on every push to main. No manual steps, no SSH sessions, no forgetting to deploy. Here's how the pieces fit together.</p>

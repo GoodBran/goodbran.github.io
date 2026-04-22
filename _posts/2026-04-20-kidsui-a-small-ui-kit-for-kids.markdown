@@ -3,6 +3,7 @@ layout: post
 title: "KidsUI: A Small UI Kit for Kids"
 date: 2026-04-20 12:00:00 +0800
 description: "I built a small UI kit for kid-friendly web projects because I keep needing cheerful, simple components for my daughter, her kindergarten, and a few educational apps I want to make later."
+cover_image: "/assets/images/kidsui-a-small-ui-kit-for-kids-cover.png"
 ---
 
 <blockquote>

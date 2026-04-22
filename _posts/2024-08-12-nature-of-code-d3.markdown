@@ -3,6 +3,7 @@ layout: post
 title: "Nature of Code with d3.js"
 date: 2024-08-12 12:00:00 +0800
 description: "This post is a personal follow up to the book The nature of code. Instead of using p5.js from the book, I decide to use d3.js."
+cover_image: "/assets/images/nature-of-code-d3-cover.png"
 ---
 
 This post is a personal follow up to the book [The nature of code](https://natureofcode.com). Instead of using [p5.js](https://p5js.org) from the book, I decide to use [d3.js](https://d3js.org), as just copying the code from the book is of no fun and `d3.js` is more popular among web developers. However, I have never developed anything using d3.js before, so let's see how far I can go this time!

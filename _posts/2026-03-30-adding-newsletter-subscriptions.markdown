@@ -3,6 +3,7 @@ layout: post
 title: "Adding Newsletter Subscriptions"
 date: 2026-03-30 12:00:00 +0800
 description: "A double opt-in newsletter for a Rails blog. Two models, two mailers, one rake task, and no third-party service."
+cover_image: "/assets/images/adding-newsletter-subscriptions-cover.png"
 ---
 
 <p>Most newsletter setups start with "sign up for Mailchimp." This one starts with <code>rails g model</code>. If you already run a Rails app, everything you need for a proper double opt-in newsletter is already in the box. Here's how ours works.</p>

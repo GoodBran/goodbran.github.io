@@ -3,6 +3,7 @@ layout: post
 title: "Discovering the Mutopia Project"
 date: 2026-04-03 12:00:00 +0800
 description: "A free library of public domain sheet music that fits perfectly into a code-first workflow."
+cover_image: "/assets/images/discovering-the-mutopia-project-cover.png"
 ---
 
 <p>I stumbled onto the <a href="https://www.mutopiaproject.org/">Mutopia Project</a> while looking for trustworthy sheet music sources. Their entire collection is open source on <a href="https://github.com/MutopiaProject/MutopiaProject">GitHub</a>.</p>
