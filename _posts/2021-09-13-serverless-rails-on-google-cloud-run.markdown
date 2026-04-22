@@ -40,17 +40,17 @@ rails new squirtle --webpack=stimulus --database=mysql
 
 Add a test home page to your rails project. You will need this page to verify the production running status.
 
-<!-- Image: /assets/images/2021091301.png - may be missing -->
+![Rails test home page](/assets/images/rails-homepage-local.png)
 
 ### Step 2 - Prepare database
 
 Create a MySQL database instance on GCP, search `sql` in the search bar and you should find the SQL admin panel. You may be asked to create a project if you didn't have one yet. Here is my demo database instance.
 
-<!-- Image: /assets/images/2021091302.png - may be missing -->
+![GCP SQL admin panel](/assets/images/gcp-sql-instances.png)
 
 Database instance can have many databases, you should now create one for your project. I am going to name it `squirtle_production`. Also don't forget to create a new user for your database, you will need it for the database configuration 😁.
 
-<!-- Image: /assets/images/2021091303.png - may be missing -->
+![Database and user creation](/assets/images/gcp-sql-database-creation.png)
 
 ### Step 3 - Config database
 
@@ -71,7 +71,7 @@ production:
   socket: "<%= ENV.fetch("DB_SOCKET_DIR") { '/cloudsql' } %>/ao-ke-meng:us-west1:snorlax"
 ```
 
-<!-- Image: /assets/images/2021091304.png - may be missing -->
+![Instance connection name](/assets/images/gcp-sql-connection-name.png)
 
 ### Step 4 - Prepare Dockerfile
 
@@ -154,7 +154,7 @@ availableSecrets:
 
 If you check the file carefully, you would notice one configuration is `_SECRET_NAME: squirtle_master_key`, I am storing the rails master key in the GCP as the secret. You should also create one secret there and let the image builder access it when building the image. Search `secret` in the search bar to find the secrets manager. Also you need to attach proper permission for accounts, so that the builder could access the secrets properly.
 
-<!-- Image: /assets/images/2021091305.png - may be missing -->
+![GCP Secrets Manager](/assets/images/gcp-secrets-manager.png)
 
 ### Step 6 - Build image manually using gcloud
 
@@ -167,19 +167,19 @@ gcloud builds submit --config cloudbuild.yaml
 
 If successful, you will see a SUCCESS message at the terminal end. Go to the cloud build page to check the build status.
 
-<!-- Image: /assets/images/2021091306.png - may be missing -->
+![Cloud build status](/assets/images/gcp-cloud-build-success.png)
 
 ### Step 7 - Deploy manually on dashboard
 
 Go the dashboard of Cloud registry and click deploy to cloud run. You need to connect to the database when first time deploy to cloud run.
 
-<!-- Image: /assets/images/2021091307.png - may be missing -->
+![Cloud registry deploy](/assets/images/gcp-cloud-registry-deploy.png)
 
-<!-- Image: /assets/images/2021091308.png - may be missing -->
+![Cloud run service connection](/assets/images/gcp-cloud-run-sql-connection.png)
 
 After deploying, check the url provided by the cloud run. You should see the home page you created before. And what's better, it's running under https!
 
-<!-- Image: /assets/images/2021091309.png - may be missing -->
+![Home page running on HTTPS](/assets/images/rails-homepage-production.png)
 
 ### Step 8 - Add healthcheck for the server
 
@@ -192,7 +192,7 @@ gem 'rails-healthcheck' # Add this helper gem to your Gemfile
 
 Search monitoring in the search bar and create a uptime check for the server. Choose the smallest period available (1min).
 
-<!-- Image: /assets/images/2021091310.png - may be missing -->
+![Uptime check configuration](/assets/images/gcp-uptime-check.png)
 
 ### Step 9 - Setup automatic docker image builder pipeline
 

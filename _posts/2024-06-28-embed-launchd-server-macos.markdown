@@ -6,8 +6,6 @@ description: "Recently I am trying to learn a bit macos development by building 
 cover_image: "/assets/images/embed-launchd-server-macos-cover.webp"
 ---
 
-<!-- Image paths may be broken - original images at /assets/images/20240628/ -->
-
 Recently I am trying to learn a bit macos development by building a [shadowsocks](https://shadowsocks.org) client based on the existing rust library - [shadowsocks rust](https://github.com/shadowsocks/shadowsocks-rust). The idea behind is simple, the app will use the compiled executable to run a server behind the scence, which basically handles all the network proxy job. The client app is used to configure and manage the underlying app server. For example, you can add a new server through manual input or by using a qr code. Also, you can easily subscribe to server providers and download servers easily.
 
 As usual, I started by googling how to embed a command line app to xcode project, and unexpectedly, there wasn't much useful resources. The only one I found useful is an official guideline - [Embedding a command-line tool in a sandboxed app](https://developer.apple.com/documentation/xcode/embedding-a-helper-tool-in-a-sandboxed-app), so natually I followed this tutorial bindly without knowing much behind the scene.
@@ -43,11 +41,11 @@ codesign -s - -i branliang.Shadoxify.sslocal -o runtime --entitlements sslocal.e
 
 - Prepare the launch agent property list, this actually a bit tricky, for your reference, here is my example configuration
 
-<!-- Image: /assets/images/20240628/property_list.png - may be missing -->
+![Launch agent property list configuration](/assets/images/20240628/launch-agent-plist.png)
 
 - Configure the app build phase, make sure both executable and property list are copied to the proper location. Again here is my configuration screenshot for reference.
 
-<!-- Image: /assets/images/20240628/build_phase.png - may be missing -->
+![Xcode build phase configuration](/assets/images/20240628/xcode-build-phase.png)
 
 ## Next
 
