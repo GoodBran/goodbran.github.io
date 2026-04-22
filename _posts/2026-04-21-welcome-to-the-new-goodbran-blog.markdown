@@ -21,7 +21,7 @@ Moving from a Rails-based content system to Jekyll offers several advantages:
 The new design is inspired by [Mozilla Protocol](https://protocol.mozilla.org/) — a design system that emphasizes:
 
 - Clean, readable typography with Zilla Slab for headings
-- Firefox orange accents (#FF7139) for calls-to-action
+- Firefox blue accents (#0060DF) for calls-to-action
 - Card-based layouts for content organization
 - Accessibility-first approach
 

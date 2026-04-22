@@ -19,9 +19,9 @@ $color-gray-90: #15141a;
 // Brand Colors
 $color-ink-70: $color-gray-90;
 $color-ink-80: #1d1d1d;
-$color-orange-50: #ff7139;
-$color-orange-60: #e25920;
-$color-orange-70: #cc3d00;
+$color-blue-50: #0060df;
+$color-blue-60: #0250bb;
+$color-blue-70: #054096;
 
 // Typography
 $font-stack-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
@@ -89,17 +89,17 @@ p {
 }
 
 a {
-  color: $color-orange-60;
+  color: $color-blue-60;
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 0.2s ease;
 
   &:hover {
-    color: $color-orange-70;
+    color: $color-blue-70;
   }
 
   &:focus {
-    outline: 2px solid $color-orange-50;
+    outline: 2px solid $color-blue-50;
     outline-offset: 2px;
   }
 }
@@ -169,11 +169,11 @@ a {
     font-size: 0.95rem;
 
     &:hover {
-      color: $color-orange-60;
+      color: $color-blue-60;
     }
 
     &.active {
-      color: $color-orange-60;
+      color: $color-blue-60;
     }
   }
 }
@@ -257,7 +257,7 @@ a {
       text-decoration: none;
 
       &:hover {
-        color: $color-orange-60;
+        color: $color-blue-60;
       }
     }
   }
@@ -346,7 +346,7 @@ a {
     }
 
     blockquote {
-      border-left: 4px solid $color-orange-50;
+      border-left: 4px solid $color-blue-50;
       padding-left: 1.5rem;
       margin: 2rem 0;
       color: $color-gray-60;
@@ -438,13 +438,13 @@ a {
   transition: all 0.2s ease;
 
   &.button-primary {
-    background-color: $color-orange-60;
+    background-color: $color-blue-60;
     color: $color-white;
-    border-color: $color-orange-60;
+    border-color: $color-blue-60;
 
     &:hover {
-      background-color: $color-orange-70;
-      border-color: $color-orange-70;
+      background-color: $color-blue-70;
+      border-color: $color-blue-70;
       color: $color-white;
     }
   }
@@ -455,8 +455,8 @@ a {
     border-color: $color-gray-40;
 
     &:hover {
-      border-color: $color-orange-60;
-      color: $color-orange-60;
+      border-color: $color-blue-60;
+      color: $color-blue-60;
     }
   }
 }
@@ -467,7 +467,7 @@ a {
   border-radius: 8px;
 
   .c { color: $color-gray-50; font-style: italic } // Comment
-  .k { color: $color-orange-60; font-weight: bold } // Keyword
+  .k { color: $color-blue-60; font-weight: bold } // Keyword
   .s { color: #2d8a4e } // String
   .n { color: $color-ink-70 } // Name
   .o { color: $color-gray-60 } // Operator
