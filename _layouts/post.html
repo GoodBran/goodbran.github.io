@@ -20,21 +20,19 @@ layout: default
     {{ content }}
   </div>
 
-  <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ededf0;">
-    <nav style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <footer class="article-nav">
+    <nav class="nav-links">
       {% if page.previous.url %}
-        <a href="{{ page.previous.url | relative_url }}" style="text-align: left;">
-          <span style="display: block; font-size: 0.875rem; color: #9595a3; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Previous</span>
-          <span style="font-weight: 600;">{{ page.previous.title | escape }}</span>
+        <a href="{{ page.previous.url | relative_url }}" class="nav-link nav-prev">
+          <span class="nav-label">Previous</span>
+          <span class="nav-title">{{ page.previous.title | escape }}</span>
         </a>
-      {% else %}
-        <span></span>
       {% endif %}
 
       {% if page.next.url %}
-        <a href="{{ page.next.url | relative_url }}" style="text-align: right;">
-          <span style="display: block; font-size: 0.875rem; color: #9595a3; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Next</span>
-          <span style="font-weight: 600;">{{ page.next.title | escape }}</span>
+        <a href="{{ page.next.url | relative_url }}" class="nav-link nav-next">
+          <span class="nav-label">Next</span>
+          <span class="nav-title">{{ page.next.title | escape }}</span>
         </a>
       {% endif %}
     </nav>
