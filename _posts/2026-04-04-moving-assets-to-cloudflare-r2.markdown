@@ -3,7 +3,7 @@ layout: post
 title: "Moving Assets to Cloudflare R2"
 date: 2026-04-04 12:00:00 +0800
 description: "Stop committing MP3s and PDFs to Git. Serve them from R2 instead—zero egress fees, local development still works, and your repo shrinks by 30MB."
-cover_image: "/assets/images/moving-assets-to-cloudflare-r2-cover.png"
+cover_image: "/assets/images/moving-assets-to-cloudflare-r2-cover.webp"
 ---
 
 <p>Binary files in Git are a trap. They bloat your repo, slow clones, and create false promises of version control. When you change one pixel in a 5MB image, Git stores another 5MB. Do this enough and your repository becomes a burden.</p>

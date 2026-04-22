@@ -3,7 +3,7 @@ layout: post
 title: "Install luci-app-ssr-plus in gl-inet e750"
 date: 2021-12-29 12:00:00 +0800
 description: "This post shows you how to install luci-app-ssr-plus in you GL-iNET mobile router."
-cover_image: "/assets/images/install-luci-ssr-plus-in-glinet-e750-cover.png"
+cover_image: "/assets/images/install-luci-ssr-plus-in-glinet-e750-cover.webp"
 ---
 
 This post shows you how to install luci-app-ssr-plus in you GL-iNET mobile router.

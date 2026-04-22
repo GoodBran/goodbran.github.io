@@ -3,7 +3,7 @@ layout: post
 title: "Basic Math Symbols for Primary and Middle School Kids"
 date: 2026-04-05 12:00:00 +0800
 description: "A simple guide to the math symbols kids see most often, grouped by grade level and category. Each symbol links to Wikipedia for deeper learning."
-cover_image: "/assets/images/basic-math-symbols-for-kids-cover.png"
+cover_image: "/assets/images/basic-math-symbols-for-kids-cover.webp"
 ---
 
 <p>Math symbols are the shorthand of school math. Kids do not need all of them at once. They need the right ones at the right time.</p>
