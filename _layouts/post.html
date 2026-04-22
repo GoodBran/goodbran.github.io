@@ -10,6 +10,12 @@ layout: default
     </div>
   </header>
 
+  {% if page.cover_image %}
+    <figure class="article-cover">
+      <img src="{{ page.cover_image | relative_url }}" alt="" class="article-cover-image">
+    </figure>
+  {% endif %}
+
   <div class="article-content">
     {{ content }}
   </div>
