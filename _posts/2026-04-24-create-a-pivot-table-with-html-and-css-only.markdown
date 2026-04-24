@@ -7,20 +7,6 @@ description: "A beginner-friendly guide to building a static pivot-table layout 
 
 Use a real `<table>`. Wrap it in a scroll box. For sticky rows or columns, use fixed widths, `border-collapse: separate`, and draw the borders yourself.
 
-HTML and CSS cannot calculate pivot data. They can only display a pivot-table shape after the numbers are already prepared.
-
-## The rules first
-
-These are the parts that usually break:
-
-- Put `overflow: auto` on a wrapper, not on the table.
-- Use `colspan` and `rowspan` for merged cells.
-- Give sticky columns fixed widths. The second sticky column needs `left` equal to the first column width.
-- Do not use `border-collapse: collapse` for sticky tables. Use `border-collapse: separate` and `border-spacing: 0`.
-- Give sticky cells a background, or scrolled text will show through.
-- Let sticky edges draw their own borders. Remove the border from the normal cell beside them when needed.
-- If a `rowspan` cell reaches the sticky footer, remove its bottom border too.
-
 ## Final shape
 
 Scroll this table sideways and down. The header, first two columns, right Total column, and bottom Grand total row stay visible.
@@ -215,74 +201,203 @@ Scroll this table sideways and down. The header, first two columns, right Total 
 
 ## How the final shape works
 
-The final shape is still one normal `<table>`. The scroll and sticky behavior come from CSS.
-
-| Sticky area | Main CSS | Why we need it |
-|---|---|---|
-| Header | `thead { position: sticky; top: 0; }` | Keep month labels visible while scrolling down |
-| First column | `.left-1 { left: 0; }` | Keep the category visible while scrolling sideways |
-| Second column | `.left-2 { left: var(--c1); }` | Keep the product visible beside the category |
-| Right Total column | `.right { right: 0; }` | Keep each row total visible while scrolling sideways |
-| Bottom total row | `tfoot { position: sticky; bottom: 0; }` | Keep column totals visible while scrolling down |
-
-The hard parts are not `position: sticky`. The hard parts are fixed column widths and clean borders.
-
 <details markdown="1">
-<summary>HTML pieces</summary>
+<summary>HTML structure</summary>
 
-| HTML | Why we need it |
-|---|---|
-| `<div class="pivot-demo pivot-demo-final">` | Scopes the demo CSS so it only affects this table |
-| `<style>...</style>` | Keeps the example self-contained |
-| `<div class="scroll">` | Creates the scroll container for horizontal and vertical scroll |
-| `<table>` | Keeps the report semantic and table-like |
-| `<colgroup>` | Gives real widths to the first, second, and total columns |
-| `<col class="c1">` | Width source for the first sticky column |
-| `<col class="c2">` | Width source for the second sticky column |
-| `<col span="6">` | The six month columns |
-| `<col class="ct">` | Width source for the right Total column |
-| `<thead>` | Holds the sticky header rows |
-| `rowspan="2"` | Makes `Category`, `Product`, and `Total` cover both header rows |
-| `colspan="3"` | Makes `Q1` and `Q2` each cover three month columns |
-| `<tbody>` | Holds the category and product rows |
-| `rowspan="2"` on categories | Merges one category label across two products |
-| `<tfoot>` | Holds the sticky Grand total row |
-| `.stick` | Marks a cell as sticky |
-| `.left-1` | Pins a cell to the first sticky column |
-| `.left-2` | Pins a cell to the second sticky column |
-| `.right` | Pins a cell to the right Total column |
-| `.grand-label` | Pins the bottom-left Grand total label |
-| `.before-right` | Removes the normal border before the sticky Total column |
-| `.touch-footer` | Removes the bottom border from a rowspanning cell that touches the footer |
+```html
+<!-- Scope wrapper: keeps demo CSS from affecting other tables -->
+<div class="pivot-demo pivot-demo-final">
+  <!-- Scroll container: creates horizontal and vertical scroll -->
+  <div class="scroll">
+    <table>
+      <!-- Column widths: locks real widths for sticky columns -->
+      <colgroup>
+        <col class="c1">  <!-- First sticky column -->
+        <col class="c2">  <!-- Second sticky column -->
+        <col span="6">    <!-- Six month columns -->
+        <col class="ct">  <!-- Right Total column -->
+      </colgroup>
+
+      <thead>
+        <tr>
+          <!-- rowspan="2": makes cells cover both header rows -->
+          <th class="stick left-1" rowspan="2">Category</th>
+          <th class="stick left-2" rowspan="2">Product</th>
+          <!-- colspan="3": groups months under quarters -->
+          <th colspan="3">Q1</th>
+          <th class="before-right" colspan="3">Q2</th>
+          <!-- Sticky right Total column header -->
+          <th class="stick right" rowspan="2">Total</th>
+        </tr>
+        <tr>
+          <th>Jan</th><th>Feb</th><th>Mar</th>
+          <th>Apr</th><th>May</th>
+          <!-- before-right: removes border before sticky Total column -->
+          <th class="before-right">Jun</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <!-- rowspan="2": groups one category across two products -->
+          <th class="stick left-1" rowspan="2">Fruit</th>
+          <th class="stick left-2">Apples</th>
+          <td>120</td><td>140</td><td>135</td>
+          <td>150</td><td>160</td>
+          <td class="before-right">170</td>
+          <!-- Sticky right Total value -->
+          <td class="stick right">875</td>
+        </tr>
+        <!-- More rows... -->
+        <tr>
+          <!-- touch-footer: rowspan cell that reaches the sticky footer -->
+          <th class="stick left-1 touch-footer" rowspan="2">Snacks</th>
+          <!-- More cells... -->
+        </tr>
+      </tbody>
+
+      <!-- tfoot: sticky Grand total row -->
+      <tfoot>
+        <tr>
+          <!-- grand-label: spans both left sticky columns -->
+          <th class="stick grand-label" colspan="2">Grand total</th>
+          <td>570</td><td>600</td><td>625</td>
+          <td>675</td><td>710</td>
+          <td class="before-right">745</td>
+          <td class="stick right">3925</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+```
 
 </details>
 
 <details markdown="1">
-<summary>CSS pieces</summary>
+<summary>CSS structure</summary>
 
-| CSS | Why we need it |
-|---|---|
-| `--c1`, `--c2`, `--total` | Store important column widths in one place |
-| `.scroll { max-height: 18rem; overflow: auto; }` | Creates the scroll box |
-| `border-collapse: separate` | Avoids sticky-border bugs from collapsed borders |
-| `border-spacing: 0` | Keeps the table looking like one clean grid |
-| `table-layout: fixed` | Makes column widths predictable |
-| `width` and `min-width` | Makes the table wide enough to scroll |
-| `.c1`, `.c2`, `.ct` | Applies fixed widths through `<colgroup>` |
-| `border-right` and `border-bottom` | Draws most grid lines |
-| `thead tr:first-child th { border-top: 1px solid #999; }` | Draws the top edge of the table |
-| `.before-right { border-right: 0; }` | Prevents a double border beside the sticky Total column |
-| `tbody tr:last-child > * { border-bottom: 0; }` | Prevents a double border above the sticky footer |
-| `.touch-footer { border-bottom: 0; }` | Fixes the same footer border issue for `rowspan` cells |
-| `thead { position: sticky; top: 0; }` | Makes the header stick to the top |
-| `tfoot { position: sticky; bottom: 0; }` | Makes the Grand total row stick to the bottom |
-| `background: var(--bg-body, white)` | Stops scrolled cells from showing through sticky cells |
-| `.stick { position: sticky; }` | Shared sticky behavior for individual cells |
-| `.left-1 { left: 0; }` | Pins the first column |
-| `.left-2 { left: var(--c1); }` | Pins the second column after the first column |
-| `.right { right: 0; }` | Pins the Total column to the right edge |
-| `.grand-label { width: calc(var(--c1) + var(--c2)); }` | Makes the Grand total label cover both left sticky columns |
-| `z-index` | Keeps sticky intersections above normal cells |
+```css
+.pivot-demo-final {
+  /* Width variables: store column widths in one place */
+  --c1: 6rem;
+  --c2: 7rem;
+  --total: 5.5rem;
+}
+
+/* Scroll container: creates horizontal and vertical scrolling */
+.pivot-demo-final .scroll {
+  max-height: 18rem;
+  overflow: auto;
+}
+
+.pivot-demo-final table {
+  /* border-collapse: separate avoids sticky-border bugs from collapsed borders */
+  border-collapse: separate;
+  border-spacing: 0;
+  /* Fixed layout: makes column widths predictable for sticky offsets */
+  table-layout: fixed;
+  width: 880px;
+  min-width: 880px;
+}
+
+/* Column widths applied through colgroup */
+.pivot-demo-final .c1 { width: var(--c1); }
+.pivot-demo-final .c2 { width: var(--c2); }
+.pivot-demo-final .ct { width: var(--total); }
+
+.pivot-demo-final th,
+.pivot-demo-final td {
+  /* Grid lines: draw right and bottom borders */
+  border: 0;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  padding: 0.35rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* Top border: draws the top edge of the table */
+.pivot-demo-final thead tr:first-child th {
+  border-top: 1px solid #999;
+}
+
+/* Border fix: removes right border before sticky Total column */
+.pivot-demo-final .before-right { border-right: 0; }
+
+/* Border fix: removes bottom border from last body row */
+.pivot-demo-final tbody tr:last-child > *,
+.pivot-demo-final .touch-footer { border-bottom: 0; }
+
+/* Sticky header: sticks to top while scrolling down */
+.pivot-demo-final thead {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+/* Sticky footer: sticks to bottom while scrolling down */
+.pivot-demo-final tfoot {
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+}
+
+/* Background: stops scrolled cells from showing through sticky cells */
+.pivot-demo-final thead th,
+.pivot-demo-final tfoot th,
+.pivot-demo-final tfoot td,
+.pivot-demo-final .stick {
+  background: var(--bg-body, white);
+}
+
+/* Shared sticky behavior for individual cells */
+.pivot-demo-final .stick {
+  position: sticky;
+  z-index: 2;
+}
+
+/* First sticky column: pinned to left edge */
+.pivot-demo-final .left-1 {
+  left: 0;
+  border-left: 1px solid #999;  /* Draws left edge of table */
+  width: var(--c1);
+  min-width: var(--c1);
+  max-width: var(--c1);
+}
+
+/* Second sticky column: positioned after first column */
+.pivot-demo-final .left-2 {
+  left: var(--c1);
+  width: var(--c2);
+  min-width: var(--c2);
+  max-width: var(--c2);
+}
+
+/* Right sticky Total column: pinned to right edge */
+.pivot-demo-final .right {
+  right: 0;
+  border-left: 1px solid #999;  /* Draws its own left border */
+  width: var(--total);
+  min-width: var(--total);
+  max-width: var(--total);
+}
+
+/* Grand total label: spans both left sticky columns */
+.pivot-demo-final .grand-label {
+  left: 0;
+  border-left: 1px solid #999;
+  width: calc(var(--c1) + var(--c2));
+  min-width: calc(var(--c1) + var(--c2));
+  max-width: calc(var(--c1) + var(--c2));
+  z-index: 5;
+}
+
+/* z-index layering: sticky intersections above normal cells */
+.pivot-demo-final thead .stick,
+.pivot-demo-final tfoot .right {
+  z-index: 5;
+}
+```
 
 </details>
 
