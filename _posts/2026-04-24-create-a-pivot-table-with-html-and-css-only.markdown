@@ -3,6 +3,7 @@ layout: post
 title: "Create a Pivot Table with HTML and CSS Only"
 date: 2026-04-24 12:00:00 +0800
 description: "A beginner-friendly guide to building a static pivot-table layout with only HTML and CSS, focusing on scroll, borders, sticky totals, and merged cells."
+cover_image: "/assets/images/create-a-pivot-table-with-html-and-css-only-cover.webp"
 ---
 
 Use a real `<table>`. Wrap it in a scroll box. For sticky rows or columns, use fixed widths, `border-collapse: separate`, and draw the borders yourself.
