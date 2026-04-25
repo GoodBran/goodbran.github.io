@@ -33,6 +33,13 @@ Below are a few static boards. They follow the [chessboard.js FEN string example
 
     .italian-static-boards figure {
       margin: 0;
+      text-align: center;
+    }
+
+    .italian-static-boards .board-container {
+      display: inline-block;
+      width: 100%;
+      max-width: 400px;
     }
 
     .italian-static-boards figcaption {
@@ -45,22 +52,22 @@ Below are a few static boards. They follow the [chessboard.js FEN string example
   </style>
 
   <figure>
-    <div id="italianBoardCenter" style="width: 400px; max-width: 100%; margin: 0 auto;"></div>
+    <div class="board-container" id="italianBoardCenter"></div>
     <figcaption><strong>1.e4 e5</strong>: both players put a pawn in the center.</figcaption>
   </figure>
 
   <figure>
-    <div id="italianBoardKnights" style="width: 400px; max-width: 100%; margin: 0 auto;"></div>
+    <div class="board-container" id="italianBoardKnights"></div>
     <figcaption><strong>2.Nf3 Nc6</strong>: White develops a knight and attacks <code>e5</code>; Black develops a knight and defends it.</figcaption>
   </figure>
 
   <figure>
-    <div id="italianBoardBishop" style="width: 400px; max-width: 100%; margin: 0 auto;"></div>
+    <div class="board-container" id="italianBoardBishop"></div>
     <figcaption><strong>3.Bc4</strong>: the bishop comes out and points at <code>f7</code>, the pawn next to Black's king.</figcaption>
   </figure>
 
   <figure>
-    <div id="italianBoardQuiet" style="width: 400px; max-width: 100%; margin: 0 auto;"></div>
+    <div class="board-container" id="italianBoardQuiet"></div>
     <figcaption><strong>A quiet plan</strong>: <code>3...Bc5 4.c3 Nf6 5.d3 d6</code>. White is ready to castle and keep building.</figcaption>
   </figure>
 </div>
