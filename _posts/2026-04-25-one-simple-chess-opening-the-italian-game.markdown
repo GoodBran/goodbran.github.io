@@ -5,19 +5,23 @@ date: 2026-04-25 12:00:00 +0800
 description: "A beginner-friendly introduction to the Italian Game: 1.e4 e5 2.Nf3 Nc6 3.Bc4, shown with simple static board examples."
 ---
 
-Play `1.e4 e5 2.Nf3 Nc6 3.Bc4`. That is the Italian Game: take the center, develop a knight, aim a bishop at `f7`, then castle.
+The [Italian Game](https://en.wikipedia.org/wiki/Italian_Game) has been played for over five centuries. It got its name not because it was invented in Italy, but because Italian masters of the 16th and 17th centuries—players like Gioachino Greco and Damiano—wrote about it, studied it, and popularized it. Before there were databases or engines, before anyone knew what "theory" meant, these three moves were already considered the proper way to start a game.
 
-If you are a chess beginner, this is a good opening because every move has a plain job. No long memory test. No ten-move spell. Just put pieces on good squares.
-
-The [Italian Game](https://en.wikipedia.org/wiki/Italian_Game) starts after these moves:
-
-```text
+```
 1. e4 e5
 2. Nf3 Nc6
 3. Bc4
 ```
 
-Below are a few static boards. They follow the [chessboard.js FEN string example](https://chessboardjs.com/examples/1002): one FEN string, one position.
+That is the Italian Game. No tricks. No memorization required. Just three moves that have passed the test of time.
+
+## Why it survived 500 years
+
+After `1.e4`, you stake a claim in the center. After `2.Nf3`, you develop a knight *and* attack that e5 pawn—two birds, one stone. Then `3.Bc4` slides your bishop to a diagonal that actually matters, eyeing that f7 square next to Black's king like a warning shot.
+
+Every move earns its keep. No passengers. No fluff.
+
+Below are the positions in action:
 
 <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -53,22 +57,22 @@ Below are a few static boards. They follow the [chessboard.js FEN string example
 
   <figure>
     <div class="board-container" id="italianBoardCenter"></div>
-    <figcaption><strong>1.e4 e5</strong>: both players put a pawn in the center.</figcaption>
+    <figcaption><strong>1.e4 e5</strong>: both sides claim the center. Nothing fancy, just good real estate.</figcaption>
   </figure>
 
   <figure>
     <div class="board-container" id="italianBoardKnights"></div>
-    <figcaption><strong>2.Nf3 Nc6</strong>: White develops a knight and attacks <code>e5</code>; Black develops a knight and defends it.</figcaption>
+    <figcaption><strong>2.Nf3 Nc6</strong>: White develops with a threat; Black defends and develops. Practical chess.</figcaption>
   </figure>
 
   <figure>
     <div class="board-container" id="italianBoardBishop"></div>
-    <figcaption><strong>3.Bc4</strong>: the bishop comes out and points at <code>f7</code>, the pawn next to Black's king.</figcaption>
+    <figcaption><strong>3.Bc4</strong>: the bishop eyes f7—that weak spot by the king. Not an immediate threat, just pressure.</figcaption>
   </figure>
 
   <figure>
     <div class="board-container" id="italianBoardQuiet"></div>
-    <figcaption><strong>A quiet plan</strong>: <code>3...Bc5 4.c3 Nf6 5.d3 d6</code>. White is ready to castle and keep building.</figcaption>
+    <figcaption><strong>A quiet continuation</strong>: after <code>3...Bc5 4.c3 Nf6 5.d3 d6</code>, both sides castle and get on with the game.</figcaption>
   </figure>
 </div>
 
@@ -86,16 +90,16 @@ Below are a few static boards. They follow the [chessboard.js FEN string example
   Chessboard("italianBoardQuiet", { position: quietPlan, pieceTheme: pieces });
 </script>
 
-## What to remember
+## What happens next
 
-The Italian Game is simple because the moves are useful even when you forget the name of the opening.
+Here's the beauty of it: after those three moves, you're just playing chess. Castle your king to safety. Connect your rooks. Develop the rest of your pieces. The opening has done its job—now the middlegame is your playground.
 
-`e4` takes space in the center.
+In the 19th century, romantic players like Paul Morphy used this opening to create fireworks. They'd sacrifice pieces left and right, hunting for the king with theatrical flair. Modern players tend to be more restrained, but the core ideas remain: control the center, develop quickly, and keep your king safe.
 
-`Nf3` develops a piece and attacks a pawn.
+## The bottom line
 
-`Bc4` develops another piece and aims at `f7`, a weak point near the king.
+The Italian Game survived centuries because it follows principles that never go out of style. These three moves are useful even when you forget what they're called. They let you focus on actually *playing* instead of reciting memorized engine lines.
 
-After that, do the beginner things that win beginner games: castle, develop the rest of your pieces, and do not move the same piece over and over for no reason.
+You don't need to know every trap in the book. You need three moves that make sense, and the discipline to follow up with good habits. Castle. Develop. Don't shuffle the same piece around while your king waits to get mugged.
 
-You do not need to know every trap. Start with these three moves, understand why they work, and play the rest of the game from there.
+Start with `1.e4 e5 2.Nf3 Nc6 3.Bc4`. Understand why each move works. Then go play some games. The rest you'll figure out at the board.
