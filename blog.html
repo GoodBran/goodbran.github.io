@@ -24,25 +24,25 @@ permalink: /blog/
   <div class="blog-grid">
     {% for post in site.posts %}
       <article class="card" data-category="{{ post.category }}">
-        {% if post.cover_image %}
-          <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
-        {% endif %}
-        <div class="card-content">
-          <div class="card-meta">
-            {{ post.date | date: "%B %d, %Y" }}
-            {% if post.category %}
-              <span class="category-badge">{{ post.category }}</span>
+        <a href="{{ post.url | relative_url }}" class="card-link" aria-label="{{ post.title | escape }}">
+          {% if post.cover_image %}
+            <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
+          {% endif %}
+          <div class="card-content">
+            <div class="card-meta">
+              {{ post.date | date: "%B %d, %Y" }}
+              {% if post.category %}
+                <span class="category-badge">{{ post.category }}</span>
+              {% endif %}
+            </div>
+            <h3 class="card-title">{{ post.title | escape }}</h3>
+            {% if post.description %}
+              <p class="card-description">{{ post.description }}</p>
+            {% else %}
+              <p class="card-description">{{ post.excerpt | strip_html | truncate: 120 }}</p>
             {% endif %}
           </div>
-          <h3 class="card-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h3>
-          {% if post.description %}
-            <p class="card-description">{{ post.description }}</p>
-          {% else %}
-            <p class="card-description">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-          {% endif %}
-        </div>
+        </a>
       </article>
     {% endfor %}
   </div>
