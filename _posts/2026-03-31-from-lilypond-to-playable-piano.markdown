@@ -2,6 +2,7 @@
 layout: post
 title: "From LilyPond to Playable Piano"
 date: 2026-03-31 12:00:00 +0800
+category: music
 description: "We now compile LilyPond into sheet music, MIDI, MP3, and OGG, then play it right on the score page."
 cover_image: "/assets/images/from-lilypond-to-playable-piano-cover.webp"
 ---

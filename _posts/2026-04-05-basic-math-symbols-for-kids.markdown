@@ -2,6 +2,7 @@
 layout: post
 title: "Basic Math Symbols for Primary and Middle School Kids"
 date: 2026-04-05 12:00:00 +0800
+category: kids
 description: "A simple guide to the math symbols kids see most often, grouped by grade level and category. Each symbol links to Wikipedia for deeper learning."
 cover_image: "/assets/images/basic-math-symbols-for-kids-cover.webp"
 ---

@@ -19,7 +19,12 @@ layout: default
           <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
         {% endif %}
         <div class="card-content">
-          <div class="card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <div class="card-meta">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% if post.category %}
+              <span class="category-badge">{{ post.category }}</span>
+            {% endif %}
+          </div>
           <h3 class="card-title">
             <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           </h3>

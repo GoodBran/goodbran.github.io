@@ -2,6 +2,7 @@
 layout: post
 title: "Moving Assets to Cloudflare R2"
 date: 2026-04-04 12:00:00 +0800
+category: devops
 description: "Stop committing MP3s and PDFs to Git. Serve them from R2 instead—zero egress fees, local development still works, and your repo shrinks by 30MB."
 cover_image: "/assets/images/moving-assets-to-cloudflare-r2-cover.webp"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Welcome to the New Goodbran Blog"
 date: 2026-04-21 12:00:00 +0800
+category: code
 description: "Introducing the new Jekyll-powered blog with Mozilla Protocol design system."
 cover_image: "/assets/images/welcome-to-the-new-goodbran-blog-cover.webp"
 ---

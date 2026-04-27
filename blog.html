@@ -12,14 +12,28 @@ permalink: /blog/
 </div>
 
 <div class="container">
+  <div class="category-filter">
+    <button class="category-chip active" data-category="all">All</button>
+    <button class="category-chip" data-category="code">Code</button>
+    <button class="category-chip" data-category="devops">DevOps</button>
+    <button class="category-chip" data-category="music">Music</button>
+    <button class="category-chip" data-category="kids">Kids</button>
+    <button class="category-chip" data-category="chess">Chess</button>
+  </div>
+
   <div class="blog-grid">
     {% for post in site.posts %}
-      <article class="card">
+      <article class="card" data-category="{{ post.category }}">
         {% if post.cover_image %}
           <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
         {% endif %}
         <div class="card-content">
-          <div class="card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+          <div class="card-meta">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% if post.category %}
+              <span class="category-badge">{{ post.category }}</span>
+            {% endif %}
+          </div>
           <h3 class="card-title">
             <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           </h3>
@@ -33,3 +47,27 @@ permalink: /blog/
     {% endfor %}
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const chips = document.querySelectorAll('.category-chip');
+  const cards = document.querySelectorAll('.card');
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      this.classList.add('active');
+
+      cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
