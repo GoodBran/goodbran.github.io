@@ -3,6 +3,7 @@ layout: post
 title: "Chess Opening: The Italian Game"
 date: 2026-04-25 12:00:00 +0800
 description: "A beginner-friendly introduction to the Italian Game: 1.e4 e5 2.Nf3 Nc6 3.Bc4, shown with simple static board examples."
+cover_image: "/assets/images/one-simple-chess-opening-the-italian-game-cover.webp"
 ---
 
 The [Italian Game](https://en.wikipedia.org/wiki/Italian_Game) has been played for over five centuries. It got its name not because it was invented in Italy, but because Italian masters of the 16th and 17th centuries—players like Gioachino Greco and Damiano—wrote about it, studied it, and popularized it. Before there were databases or engines, before anyone knew what "theory" meant, these three moves were already considered the proper way to start a game.
