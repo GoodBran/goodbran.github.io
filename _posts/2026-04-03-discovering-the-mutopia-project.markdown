@@ -2,6 +2,7 @@
 layout: post
 title: "Discovering the Mutopia Project"
 date: 2026-04-03 12:00:00 +0800
+category: music
 description: "A free library of public domain sheet music that fits perfectly into a code-first workflow."
 cover_image: "/assets/images/discovering-the-mutopia-project-cover.webp"
 ---

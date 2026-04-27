@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "X API, POSSE, and the Cost of Automation"
-date: 2026-04-05 12:00:00 +0800
+date: 2026-04-05 13:00:00 +0800
+category: code
 description: "I wanted to auto-syndicate blog posts to X. Then I found out every API request costs money. Here's why that might actually be fine."
 cover_image: "/assets/images/x-api-posse-cost-automation-cover.webp"
 ---

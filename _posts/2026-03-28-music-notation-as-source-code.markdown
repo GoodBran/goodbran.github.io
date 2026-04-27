@@ -2,6 +2,7 @@
 layout: post
 title: "Music Notation as Source Code"
 date: 2026-03-28 12:00:00 +0800
+category: music
 description: "LilyPond turns plain text into engraved sheet music, and that makes it feel like code."
 cover_image: "/assets/images/music-notation-as-source-code-cover.webp"
 ---

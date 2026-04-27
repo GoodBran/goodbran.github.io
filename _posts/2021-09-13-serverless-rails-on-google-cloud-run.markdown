@@ -2,6 +2,7 @@
 layout: post
 title: "Serverless rails on google cloud run"
 date: 2021-09-13 12:00:00 +0800
+category: devops
 description: "This tutorial shows you a way to deploy rails on google cloud run and at the same time make the server warm all the time."
 cover_image: "/assets/images/serverless-rails-google-cloud-run-cover.webp"
 ---

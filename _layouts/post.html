@@ -7,6 +7,9 @@ layout: default
     <h1 class="article-title">{{ page.title | escape }}</h1>
     <div class="article-meta">
       <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.category %}
+        <span class="category-badge">{{ page.category }}</span>
+      {% endif %}
     </div>
   </header>
 

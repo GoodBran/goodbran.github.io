@@ -2,6 +2,7 @@
 layout: post
 title: "How to build a scalable application using Rails?"
 date: 2023-05-27 12:00:00 +0800
+category: code
 description: "With the growing of your rails application, it is inevitable that more and more functions will be put into a single repo."
 cover_image: "/assets/images/rails-engine-with-packwerk-cover.webp"
 ---

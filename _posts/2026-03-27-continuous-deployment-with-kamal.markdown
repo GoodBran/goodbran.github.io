@@ -2,6 +2,7 @@
 layout: post
 title: "Continuous Deployment with Kamal"
 date: 2026-03-27 12:00:00 +0800
+category: devops
 description: "Push to main, deploy to production. The whole setup in three files and a few secrets."
 cover_image: "/assets/images/continuous-deployment-with-kamal-cover.webp"
 ---

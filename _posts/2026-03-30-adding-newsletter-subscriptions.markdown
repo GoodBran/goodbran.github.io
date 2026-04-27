@@ -2,6 +2,7 @@
 layout: post
 title: "Adding Newsletter Subscriptions"
 date: 2026-03-30 12:00:00 +0800
+category: code
 description: "A double opt-in newsletter for a Rails blog. Two models, two mailers, one rake task, and no third-party service."
 cover_image: "/assets/images/adding-newsletter-subscriptions-cover.webp"
 ---

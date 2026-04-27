@@ -2,6 +2,7 @@
 layout: post
 title: "Nature of Code with d3.js"
 date: 2024-08-12 12:00:00 +0800
+category: code
 description: "This post is a personal follow up to the book The nature of code. Instead of using p5.js from the book, I decide to use d3.js."
 cover_image: "/assets/images/nature-of-code-d3-cover.webp"
 ---

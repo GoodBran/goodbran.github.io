@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Why the Code Block Wouldn't Scroll"
-date: 2026-03-27 12:00:00 +0800
+date: 2026-03-27 13:00:00 +0800
+category: code
 description: "The code block had `overflow-x: auto` and still refused to scroll. The culprit was the grid item around it."
 cover_image: "/assets/images/why-the-code-block-wouldnt-scroll-cover.webp"
 ---
