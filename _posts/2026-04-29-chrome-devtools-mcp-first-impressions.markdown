@@ -4,6 +4,7 @@ title: "First Impressions: Chrome DevTools MCP with Claude Code"
 date: 2026-04-29 10:00:00 +0800
 category: tools
 description: "My first experience with the Chrome DevTools MCP server - giving Claude the ability to 'see' my browser screen and debug web pages in real-time."
+cover_image: "/assets/images/chrome-devtools-mcp-first-impressions-cover.webp"
 ---
 
 I discovered the [Chrome DevTools MCP server](https://github.com/ChromeDevTools/chrome-devtools-mcp) from a [Google Chrome Developers YouTube video](https://www.youtube.com/watch?v=DanTBy6Qazg&list=PLNYkxOF6rcIAcezfL8q0rjt13ufKseL5X&index=6). The idea was intriguing: connect Claude Code directly to my browser via Chrome's remote debugging protocol.
