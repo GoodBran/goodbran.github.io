@@ -49,6 +49,71 @@ cover_image: "/assets/images/markdown-syntax-showcase-cover.webp"
 <span class="k">end</span>
 </code></pre></div></div>
 
+<h2 id="code-playground">Code Playground</h2>
+
+<p>Posts can also embed a static code playground with switchable Preview, HTML, CSS, and JS tabs.</p>
+
+{% capture playground_html %}
+<div class="note-card" data-note-card>
+  <p class="eyebrow">Static playground</p>
+  <h4>Ship tiny demos in posts</h4>
+  <button type="button">Make it pop</button>
+</div>
+{% endcapture %}
+
+{% capture playground_css %}
+.note-card {
+  max-width: 22rem;
+  padding: 1.25rem;
+  border: 2px solid #15141a;
+  border-radius: 1rem;
+  background: #fff7d6;
+  box-shadow: 8px 8px 0 #15141a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card.is-active {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0 #15141a;
+}
+
+.note-card .eyebrow {
+  margin: 0 0 0.35rem;
+  color: #0250bb;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-card h4 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.note-card button {
+  border: 0;
+  border-radius: 999px;
+  background: #0250bb;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0.7rem 1rem;
+}
+{% endcapture %}
+
+{% capture playground_js %}
+const card = document.querySelector("[data-note-card]");
+const button = card.querySelector("button");
+
+button.addEventListener("click", () => {
+  card.classList.toggle("is-active");
+  button.textContent = card.classList.contains("is-active") ? "Reset" : "Make it pop";
+});
+{% endcapture %}
+
+{% include code-playground.html title="Tiny Card Demo" html=playground_html css=playground_css js=playground_js height="300px" %}
+
 <h2 id="blockquotes">Blockquotes</h2>
 
 <blockquote>

@@ -1,0 +1,79 @@
+{% assign playground_title = include.title | default: "Code Playground" %}
+{% assign playground_html = include.html | default: "" %}
+{% assign playground_css = include.css | default: "" %}
+{% assign playground_js = include.js | default: "" %}
+{% assign playground_css_trimmed = playground_css | strip %}
+{% assign playground_js_trimmed = playground_js | strip %}
+{% assign playground_height = include.height | default: "260px" %}
+
+{% capture playground_document %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      color: #15141a;
+      background: #ffffff;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+{{ playground_css }}
+  </style>
+</head>
+<body>
+{{ playground_html }}
+{% if playground_js_trimmed != "" %}
+  <script>
+{{ playground_js }}
+  </script>
+{% endif %}
+</body>
+</html>
+{% endcapture %}
+
+<section class="code-playground" data-code-playground style="--playground-height: {{ playground_height | escape }};">
+  <div class="code-playground__header">
+    <h3 class="code-playground__title">{{ playground_title | escape }}</h3>
+    <div class="code-playground__tabs" role="tablist" aria-label="Switch code playground view">
+      <button class="code-playground__tab is-active" type="button" role="tab" aria-selected="true" data-playground-tab="preview">Preview</button>
+      <button class="code-playground__tab" type="button" role="tab" aria-selected="false" data-playground-tab="html">HTML</button>
+      {% if playground_css_trimmed != "" %}
+        <button class="code-playground__tab" type="button" role="tab" aria-selected="false" data-playground-tab="css">CSS</button>
+      {% endif %}
+      {% if playground_js_trimmed != "" %}
+        <button class="code-playground__tab" type="button" role="tab" aria-selected="false" data-playground-tab="js">JS</button>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="code-playground__body">
+    <div class="code-playground__panel is-active" role="tabpanel" data-playground-panel="preview">
+      <iframe class="code-playground__preview" title="{{ playground_title | escape }} preview" sandbox="allow-scripts" loading="lazy" srcdoc="{{ playground_document | strip | escape }}"></iframe>
+    </div>
+
+    <div class="code-playground__panel" role="tabpanel" data-playground-panel="html" hidden>
+      <pre class="code-playground__source"><code class="language-html">{{ playground_html | strip | escape }}</code></pre>
+    </div>
+
+    {% if playground_css_trimmed != "" %}
+      <div class="code-playground__panel" role="tabpanel" data-playground-panel="css" hidden>
+        <pre class="code-playground__source"><code class="language-css">{{ playground_css | strip | escape }}</code></pre>
+      </div>
+    {% endif %}
+
+    {% if playground_js_trimmed != "" %}
+      <div class="code-playground__panel" role="tabpanel" data-playground-panel="js" hidden>
+        <pre class="code-playground__source"><code class="language-js">{{ playground_js | strip | escape }}</code></pre>
+      </div>
+    {% endif %}
+  </div>
+</section>
