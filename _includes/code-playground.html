@@ -18,6 +18,9 @@
     }
 
     body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
       margin: 0;
       padding: 1rem;
       color: #15141a;
@@ -40,6 +43,10 @@
 </html>
 {% endcapture %}
 
+{% capture playground_html_source %}{% highlight html %}{{ playground_html | strip }}{% endhighlight %}{% endcapture %}
+{% capture playground_css_source %}{% highlight css %}{{ playground_css | strip }}{% endhighlight %}{% endcapture %}
+{% capture playground_js_source %}{% highlight javascript %}{{ playground_js | strip }}{% endhighlight %}{% endcapture %}
+
 <section class="code-playground" data-code-playground style="--playground-height: {{ playground_height | escape }};">
   <div class="code-playground__header">
     <h3 class="code-playground__title">{{ playground_title | escape }}</h3>
@@ -61,18 +68,18 @@
     </div>
 
     <div class="code-playground__panel" role="tabpanel" data-playground-panel="html" hidden>
-      <pre class="code-playground__source"><code class="language-html">{{ playground_html | strip | escape }}</code></pre>
+      <div class="code-playground__source">{{ playground_html_source }}</div>
     </div>
 
     {% if playground_css_trimmed != "" %}
       <div class="code-playground__panel" role="tabpanel" data-playground-panel="css" hidden>
-        <pre class="code-playground__source"><code class="language-css">{{ playground_css | strip | escape }}</code></pre>
+        <div class="code-playground__source">{{ playground_css_source }}</div>
       </div>
     {% endif %}
 
     {% if playground_js_trimmed != "" %}
       <div class="code-playground__panel" role="tabpanel" data-playground-panel="js" hidden>
-        <pre class="code-playground__source"><code class="language-js">{{ playground_js | strip | escape }}</code></pre>
+        <div class="code-playground__source">{{ playground_js_source }}</div>
       </div>
     {% endif %}
   </div>

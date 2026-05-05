@@ -74,6 +74,10 @@ $font-stack-mozilla: "Zilla Slab", "Inter", serif;
   --syntax-comment: #{$color-gray-50};
   --syntax-keyword: #{$color-blue-60};
   --syntax-string: #2d8a4e;
+  --syntax-number: #9c6f19;
+  --syntax-tag: #d72684;
+  --syntax-attribute: #6f42c1;
+  --syntax-function: #c65000;
   --syntax-name: #{$color-ink-70};
   --syntax-operator: #{$color-gray-60};
   --syntax-punctuation: #{$color-gray-60};
@@ -125,6 +129,10 @@ $font-stack-mozilla: "Zilla Slab", "Inter", serif;
     --syntax-comment: #52525e;
     --syntax-keyword: #4dabf7;
     --syntax-string: #69db7c;
+    --syntax-number: #ffd43b;
+    --syntax-tag: #ff8cc6;
+    --syntax-attribute: #b197fc;
+    --syntax-function: #ffa94d;
     --syntax-name: #{$color-gray-30};
     --syntax-operator: #{$color-gray-40};
     --syntax-punctuation: #{$color-gray-40};
@@ -749,11 +757,15 @@ a {
   border-radius: 8px;
   transition: background-color 0.3s ease;
 
-  .c { color: var(--syntax-comment); font-style: italic } // Comment
-  .k { color: var(--syntax-keyword); font-weight: bold } // Keyword
-  .s { color: var(--syntax-string) } // String
-  .n { color: var(--syntax-name) } // Name
-  .o { color: var(--syntax-operator) } // Operator
+  .c, .c1, .cm { color: var(--syntax-comment); font-style: italic } // Comment
+  .k, .kd, .kn, .kp, .kr, .kt { color: var(--syntax-keyword); font-weight: bold } // Keyword
+  .s, .s1, .s2, .se, .sr, .dl { color: var(--syntax-string) } // String
+  .m, .mi, .mf { color: var(--syntax-number) } // Number
+  .nt { color: var(--syntax-tag); font-weight: 600 } // Tag
+  .na, .nc, .nl { color: var(--syntax-attribute) } // Attribute
+  .nb, .nf, .fm { color: var(--syntax-function) } // Function
+  .n, .nx { color: var(--syntax-name) } // Name
+  .o, .ow { color: var(--syntax-operator) } // Operator
   .p { color: var(--syntax-punctuation) } // Punctuation
 }
 
@@ -855,8 +867,22 @@ a {
   border-radius: 0;
 }
 
-.article .article-content .code-playground__source code,
-.code-playground__source code {
+.code-playground__source .highlight {
+  margin: 0;
+  border-radius: 0;
+}
+
+.article .article-content .code-playground__source pre,
+.code-playground__source pre {
+  min-height: var(--playground-height);
+  margin: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: var(--syntax-bg);
+}
+
+.article .article-content .code-playground__source pre code,
+.code-playground__source pre code {
   display: block;
   min-width: max-content;
   background: transparent;
