@@ -4,7 +4,6 @@ title: "X API, POSSE, and the Cost of Automation"
 date: 2026-04-05 13:00:00 +0800
 category: code
 description: "I wanted to auto-syndicate blog posts to X. Then I found out every API request costs money. Here's why that might actually be fine."
-cover_image: "/assets/images/x-api-posse-cost-automation-cover.webp"
 ---
 
 <p>Most newsletter setups start with "sign up for Mailchimp." My POSSE experiment started with "how hard could posting to X be?" Turns out, pretty hard – or at least, surprisingly expensive.</p>

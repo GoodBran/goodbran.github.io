@@ -4,7 +4,6 @@ title: "Markdown Syntax Showcase"
 date: 2026-03-25 12:00:00 +0800
 category: code
 description: "A demo post showing the Markdown and KaTeX syntax supported by Perron and kramdown."
-cover_image: "/assets/images/markdown-syntax-showcase-cover.webp"
 ---
 
 <p>This post demonstrates the Markdown and KaTeX syntax rendering capabilities of the blog.</p>

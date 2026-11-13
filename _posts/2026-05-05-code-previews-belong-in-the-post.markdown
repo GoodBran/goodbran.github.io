@@ -4,7 +4,6 @@ title: "Code Previews Belong in the Post"
 date: 2026-05-05 10:00:00 +0800
 category: code
 description: "How this blog got a tiny static code playground with preview, HTML, CSS, and JS tabs."
-cover_image: "/assets/images/code-previews-belong-in-the-post-cover.webp"
 ---
 
 A post about code should show the code running. Not as a SaaS embed. Not as a dependency carnival. Right here, in the page.

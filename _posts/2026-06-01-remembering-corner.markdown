@@ -5,6 +5,7 @@ date: 2026-06-01 12:00:00 +0800
 category: life
 description: "A short goodbye to Corner, my cat, who was with us from February 2017 to May 2026."
 cover_image: "/assets/images/corner_2017-2026/1.JPG"
+thumbnail: "/assets/images/corner_2017-2026/thumb.webp"
 ---
 
 Corner was with us from February 2017 to May 2026.

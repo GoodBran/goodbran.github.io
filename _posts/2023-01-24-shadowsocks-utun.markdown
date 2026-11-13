@@ -4,7 +4,6 @@ title: "Using shadowsocks with utun interface"
 date: 2023-01-24 12:00:00 +0800
 category: devops
 description: "Shadowsocks could help to proxy the network traffic to your remote server. However, with the development of shadowsocks-rust, now it has a new mode which utilizes the unix tun interface feature."
-cover_image: "/assets/images/shadowsocks-utun-cover.webp"
 ---
 
 As you all know that [shadowsocks](https://shadowsocks.org/) could help to proxy the network traffic to your remote server. However, with the development of the [shadowsocks-rust](https://github.com/shadowsocks/shadowsocks-rust), now it has a new mode which utilizes the unix [tun interface feature](https://en.wikipedia.org/wiki/TUN/TAP). This post will show you briefly how that looks like.

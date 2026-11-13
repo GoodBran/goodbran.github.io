@@ -4,7 +4,6 @@ title: "Designing the Favicon"
 date: 2026-03-26 12:00:00 +0800
 category: code
 description: "How two brackets, two AI tools, and a bit of stubbornness led to this site's favicon."
-cover_image: "/assets/images/designing-the-favicon-cover.webp"
 ---
 
 <p>Every site needs a favicon. Mine started as a throwaway thought and ended up being a small study in how I actually work.</p>

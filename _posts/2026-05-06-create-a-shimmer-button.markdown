@@ -4,7 +4,6 @@ title: "Create a Shimmer Button"
 date: 2026-05-06 00:00:00 +0800
 category: code
 description: "A small HTML, CSS, and JavaScript pattern for creating a shimmer button that does not stack duplicate effects or leave extra elements behind."
-cover_image: "/assets/images/create-a-shimmer-button-cover.webp"
 ---
 
 A shimmer button is just a light sweep across a clipped button. The trick is not the gradient. The trick is knowing when to create it, when to ignore extra triggers, and when to clean it up.

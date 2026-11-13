@@ -1,0 +1,16 @@
+{% assign thumb = post.thumbnail | default: post.cover_image %}
+<li class="post-row{% if thumb %} has-cover{% endif %}" data-category="{{ post.category }}">
+  <a href="{{ post.url | relative_url }}" class="post-row-link">
+    <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    <span class="post-row-body">
+      <span class="post-row-title">{{ post.title | escape }}</span>
+      {% if post.description %}
+        <span class="post-row-description">{{ post.description }}</span>
+      {% else %}
+        <span class="post-row-description">{{ post.excerpt | strip_html | truncate: 140 }}</span>
+      {% endif %}
+    </span>
+    {% if post.category %}<span class="category-badge post-row-tag">{{ post.category }}</span>{% endif %}
+    {% if thumb %}<img src="{{ thumb | relative_url }}" alt="" class="post-row-thumb" loading="lazy" decoding="async">{% endif %}
+  </a>
+</li>

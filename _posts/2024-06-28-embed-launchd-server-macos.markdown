@@ -4,7 +4,6 @@ title: "How to embed an executable server in macos"
 date: 2024-06-28 12:00:00 +0800
 category: code
 description: "Recently I am trying to learn a bit macos development by building a shadowsocks client based on the existing rust library."
-cover_image: "/assets/images/embed-launchd-server-macos-cover.webp"
 ---
 
 Recently I am trying to learn a bit macos development by building a [shadowsocks](https://shadowsocks.org) client based on the existing rust library - [shadowsocks rust](https://github.com/shadowsocks/shadowsocks-rust). The idea behind is simple, the app will use the compiled executable to run a server behind the scence, which basically handles all the network proxy job. The client app is used to configure and manage the underlying app server. For example, you can add a new server through manual input or by using a qr code. Also, you can easily subscribe to server providers and download servers easily.

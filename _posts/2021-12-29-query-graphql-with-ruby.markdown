@@ -4,7 +4,6 @@ title: "Simple graphql query with ruby"
 date: 2021-12-29 13:00:00 +0800
 category: code
 description: "Query GraphQL in ruby is easy. All you need is a library for HTTP post request."
-cover_image: "/assets/images/query-graphql-with-ruby-cover.webp"
 ---
 
 Query GraphQL in ruby is easy. All you need is a library for HTTP post request.

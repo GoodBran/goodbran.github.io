@@ -22,17 +22,24 @@ permalink: /blog/
     {% endfor %}
   </div>
 
-  <div class="blog-grid">
-    {% for post in site.posts %}
-      {% include post-card.html %}
-    {% endfor %}
-  </div>
+  {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in years %}
+    <section class="post-year" data-year="{{ year.name }}">
+      <h2 class="post-year-title">{{ year.name }}</h2>
+      <ul class="post-list">
+        {% for post in year.items %}
+          {% include post-row.html %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var chips = document.querySelectorAll('.category-chip');
-  var cards = document.querySelectorAll('.card');
+  var rows = document.querySelectorAll('.post-row');
+  var years = document.querySelectorAll('.post-year');
 
   chips.forEach(function(chip) {
     chip.addEventListener('click', function() {
@@ -44,8 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         c.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
 
-      cards.forEach(function(card) {
-        card.hidden = !(category === 'all' || card.getAttribute('data-category') === category);
+      rows.forEach(function(row) {
+        row.hidden = !(category === 'all' || row.getAttribute('data-category') === category);
+      });
+
+      years.forEach(function(year) {
+        year.hidden = !year.querySelector('.post-row:not([hidden])');
       });
     });
   });

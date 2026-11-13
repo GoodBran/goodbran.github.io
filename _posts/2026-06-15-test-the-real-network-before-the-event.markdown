@@ -4,7 +4,6 @@ title: "Test the Real Network Before the Event"
 date: 2026-06-15 12:00:00 +0800
 category: code
 description: "A short lesson from two school presentation web apps: always test deployment from the real network before the event."
-cover_image: "/assets/images/test-the-real-network-before-the-event-cover.png"
 ---
 
 Always test the project in the real network environment before the event. A web app can look perfect at home, pass every local test, and still fail in the room where it actually needs to work.

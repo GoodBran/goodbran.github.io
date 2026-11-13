@@ -4,7 +4,6 @@ title: "Cheap AI Models on AWS Bedrock: A Small Email Classification Test"
 date: 2026-05-18 12:00:00 +0800
 category: code
 description: "A quick AWS Bedrock experiment comparing low-cost models on a simple email subject classification task."
-cover_image: "/assets/images/cheap-ai-models-on-aws-bedrock-cover.webp"
 ---
 
 This is a simple experiment classifying 20 email subjects using cheap AI models available on AWS Bedrock. The goal is to see how they perform on a basic, high-volume production task.

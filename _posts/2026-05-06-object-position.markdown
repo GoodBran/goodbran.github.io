@@ -4,7 +4,6 @@ title: "Object Position"
 date: 2026-05-06 13:00:00 +0800
 category: code
 description: "A small HTML, CSS, and JavaScript demo that shows how to place objects inside a frame without letting them spill outside the edges."
-cover_image: "/assets/images/object-position-cover.webp"
 ---
 
 Object position starts with one question: which point on the object are you placing?

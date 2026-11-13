@@ -366,79 +366,135 @@ img {
   margin: 0 0 0.35rem;
 }
 
-// Post grid
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: 1.25rem;
+// Post list
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
 }
 
-.card {
-  background: var(--surface);
+.post-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.post-row-link {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  padding: 1.1rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-radius: $radius-sm;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: var(--surface);
+
+    .post-row-title { color: var(--accent); }
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+.post-row-date {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  color: var(--text-meta);
+  white-space: nowrap;
+}
+
+.post-row-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.post-row-title {
+  font-family: $font-mono;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--text-heading);
+  transition: color 0.15s ease;
+}
+
+.post-row-description {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.post-row-tag {
+  grid-column: 3;
+  grid-row: 1;
+  white-space: nowrap;
+}
+
+.post-row.has-cover .post-row-link {
+  grid-template-columns: 7.5rem minmax(0, 1fr) auto 9rem;
+}
+
+.post-row-thumb {
+  grid-column: 4;
+  grid-row: 1;
+  align-self: center;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: $radius-sm;
   border: 1px solid var(--border);
-  border-radius: $radius;
-  overflow: hidden;
-  transition: border-color 0.15s ease;
+  background: var(--surface-2);
+}
 
-  &:hover,
-  &:focus-within {
-    border-color: var(--accent);
+.post-year {
+  margin-bottom: 2.5rem;
+}
 
-    .card-title { color: var(--accent); }
-    .card-image { filter: none; }
+.post-year-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--text-meta);
+  margin: 0 0 0.75rem;
+
+  &::before {
+    content: "./";
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 640px) {
+  .post-row-link {
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 0.75rem;
   }
 
-  .card-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
-
-    &:focus-visible {
-      outline-offset: -2px;
-    }
+  .post-row-body {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
-  .card-image {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--border);
-    filter: saturate(0.85);
-    transition: filter 0.2s ease;
+  .post-row-tag {
+    grid-column: 2;
+    grid-row: 1;
   }
 
-  .card-content {
-    padding: 1.1rem 1.25rem 1.35rem;
+  .post-row.has-cover .post-row-link {
+    grid-template-columns: auto 1fr;
   }
 
-  .card-meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    font-family: $font-mono;
-    font-size: 0.75rem;
-    color: var(--text-meta);
-    margin-bottom: 0.6rem;
-  }
-
-  .card-title {
-    font-size: 1.1rem;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.5rem;
-    transition: color 0.15s ease;
-  }
-
-  .card-description {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: var(--text-muted);
-    margin: 0;
+  .post-row-thumb {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0.5rem;
   }
 }
 
