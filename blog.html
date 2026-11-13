@@ -4,68 +4,48 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="hero" style="padding: 3rem 0;">
+<section class="hero hero-compact">
   <div class="container">
-    <h1 style="font-size: 2.5rem;">All Posts</h1>
-    <p class="lead">Thoughts on coding, music, and creative projects.</p>
+    <p class="prompt" aria-hidden="true"><span class="prompt-user">bran@{{ site.title | downcase }}</span>:<span class="prompt-path">~/posts</span>$ ls</p>
+    <h1>All posts</h1>
+    <p class="lead">Notes on coding, music, and creative projects.</p>
   </div>
-</div>
+</section>
 
 <div class="container">
-  <div class="category-filter">
-    <button class="category-chip active" data-category="all">All</button>
-    <button class="category-chip" data-category="code">Code</button>
-    <button class="category-chip" data-category="devops">DevOps</button>
-    <button class="category-chip" data-category="music">Music</button>
-    <button class="category-chip" data-category="kids">Kids</button>
-    <button class="category-chip" data-category="chess">Chess</button>
+  {% assign categories = site.posts | map: "category" | compact | uniq | sort %}
+  <div class="category-filter" role="group" aria-label="Filter posts by category">
+    <button type="button" class="category-chip active" data-category="all" aria-pressed="true">all<span class="count">{{ site.posts.size }}</span></button>
+    {% for category in categories %}
+      {% assign count = site.posts | where: "category", category | size %}
+      <button type="button" class="category-chip" data-category="{{ category }}" aria-pressed="false">#{{ category }}<span class="count">{{ count }}</span></button>
+    {% endfor %}
   </div>
 
   <div class="blog-grid">
     {% for post in site.posts %}
-      <article class="card" data-category="{{ post.category }}">
-        <a href="{{ post.url | relative_url }}" class="card-link" aria-label="{{ post.title | escape }}">
-          {% if post.cover_image %}
-            <img src="{{ post.cover_image | relative_url }}" alt="" class="card-image">
-          {% endif %}
-          <div class="card-content">
-            <div class="card-meta">
-              {{ post.date | date: "%B %d, %Y" }}
-              {% if post.category %}
-                <span class="category-badge">{{ post.category }}</span>
-              {% endif %}
-            </div>
-            <h3 class="card-title">{{ post.title | escape }}</h3>
-            {% if post.description %}
-              <p class="card-description">{{ post.description }}</p>
-            {% else %}
-              <p class="card-description">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-            {% endif %}
-          </div>
-        </a>
-      </article>
+      {% include post-card.html %}
     {% endfor %}
   </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const chips = document.querySelectorAll('.category-chip');
-  const cards = document.querySelectorAll('.card');
+  var chips = document.querySelectorAll('.category-chip');
+  var cards = document.querySelectorAll('.card');
 
   chips.forEach(function(chip) {
     chip.addEventListener('click', function() {
-      const category = this.getAttribute('data-category');
+      var category = chip.getAttribute('data-category');
 
-      chips.forEach(function(c) { c.classList.remove('active'); });
-      this.classList.add('active');
+      chips.forEach(function(c) {
+        var active = c === chip;
+        c.classList.toggle('active', active);
+        c.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
 
       cards.forEach(function(card) {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+        card.hidden = !(category === 'all' || card.getAttribute('data-category') === category);
       });
     });
   });

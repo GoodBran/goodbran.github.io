@@ -2,12 +2,18 @@
 layout: default
 ---
 
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 220 | at_least: 1 %}
 <article class="article">
   <header class="article-header">
+    <p class="article-path"><a href="{{ "/blog/" | relative_url }}">~/posts/</a>{{ page.path | split: "/" | last | replace: ".markdown", ".md" }}</p>
     <h1 class="article-title">{{ page.title | escape }}</h1>
     <div class="article-meta">
-      <span class="date">{{ page.date | date: "%B %d, %Y" }}</span>
+      <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      <span class="sep" aria-hidden="true">·</span>
+      <span>{{ minutes }} min read</span>
       {% if page.category %}
+        <span class="sep" aria-hidden="true">·</span>
         <span class="category-badge">{{ page.category }}</span>
       {% endif %}
     </div>
@@ -24,17 +30,17 @@ layout: default
   </div>
 
   <footer class="article-nav">
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="More posts">
       {% if page.previous.url %}
         <a href="{{ page.previous.url | relative_url }}" class="nav-link nav-prev">
-          <span class="nav-label">Previous</span>
+          <span class="nav-label">prev</span>
           <span class="nav-title">{{ page.previous.title | escape }}</span>
         </a>
       {% endif %}
 
       {% if page.next.url %}
         <a href="{{ page.next.url | relative_url }}" class="nav-link nav-next">
-          <span class="nav-label">Next</span>
+          <span class="nav-label">next</span>
           <span class="nav-title">{{ page.next.title | escape }}</span>
         </a>
       {% endif %}

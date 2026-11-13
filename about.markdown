@@ -16,7 +16,7 @@ Goodbran is a personal blog about writing, publishing, and sharing notes and pia
 
 This site is built with:
 - **Jekyll** - Static site generator
-- **Mozilla Protocol Design System** - Clean, professional styling
+- **Workbench** - A custom, terminal-inspired theme (IBM Plex Sans and JetBrains Mono)
 
 ## Get in Touch
 
