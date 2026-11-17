@@ -1,0 +1,14 @@
+{% assign thumb = project.thumbnail | default: project.cover_image %}
+<li class="project-card">
+  <a href="{{ project.url | relative_url }}" class="project-card-link">
+    {% if thumb %}<img src="{{ thumb | relative_url }}" alt="" class="project-card-image" loading="lazy" decoding="async">{% endif %}
+    <span class="project-card-body">
+      <span class="project-card-meta">
+        {% if project.kind %}<span class="category-badge">{{ project.kind }}</span>{% endif %}
+        {% if project.status %}<span class="project-card-status">{{ project.status }}</span>{% endif %}
+      </span>
+      <span class="project-card-title">{{ project.title | escape }}</span>
+      <span class="project-card-description">{{ project.description }}</span>
+    </span>
+  </a>
+</li>

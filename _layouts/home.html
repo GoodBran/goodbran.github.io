@@ -10,6 +10,53 @@ layout: default
   </div>
 </section>
 
+{% assign projects = site.projects | sort: "order" %}
+{% if projects.size > 0 %}
+<div class="container home-projects">
+  <div class="section-head">
+    <div>
+      <p class="section-kicker" aria-hidden="true">$ ls projects/</p>
+      <h2>Projects</h2>
+    </div>
+    <a href="{{ "/projects/" | relative_url }}">all {{ projects.size }} project{% if projects.size != 1 %}s{% endif %} →</a>
+  </div>
+
+  {% assign featured = projects.first %}
+  {% assign thumb = featured.cover_image | default: featured.thumbnail %}
+  <article class="project-feature">
+    {% if thumb %}
+      <a href="{{ featured.url | relative_url }}" class="project-feature-media" tabindex="-1" aria-hidden="true">
+        <img src="{{ thumb | relative_url }}" alt="" loading="lazy" decoding="async"{% if featured.cover_width %} width="{{ featured.cover_width }}" height="{{ featured.cover_height }}"{% endif %}>
+      </a>
+    {% endif %}
+    <div class="project-feature-body">
+      <p class="project-card-meta">
+        {% if featured.kind %}<span class="category-badge">{{ featured.kind }}</span>{% endif %}
+        {% if featured.status %}<span class="project-card-status">{{ featured.status }}</span>{% endif %}
+      </p>
+      <h3 class="project-feature-title"><a href="{{ featured.url | relative_url }}">{{ featured.title | escape }}</a></h3>
+      <p class="project-feature-description">{{ featured.description }}</p>
+      {% if featured.platforms %}<p class="project-feature-platforms">{{ featured.platforms | join: " · " }}</p>{% endif %}
+      <p class="project-actions">
+        {% if featured.links %}
+          {% assign primary = featured.links.first %}
+          <a href="{{ primary.url }}" class="button button-primary" target="_blank" rel="noopener">{{ primary.label }} →</a>
+        {% endif %}
+        <a href="{{ featured.url | relative_url }}" class="button button-secondary">Read more</a>
+      </p>
+    </div>
+  </article>
+
+  {% if projects.size > 1 %}
+    <ul class="project-grid">
+      {% for project in projects offset:1 limit:3 %}
+        {% include project-card.html %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endif %}
+
 <div class="container">
   <div class="section-head">
     <div>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<section class="hero hero-compact">
+  <div class="container">
+    <p class="prompt" aria-hidden="true"><span class="prompt-user">bran@{{ site.title | downcase }}</span>:<span class="prompt-path">~/projects</span>$ ls</p>
+    <h1>Projects</h1>
+    <p class="lead">Things I've built and shipped.</p>
+  </div>
+</section>
+
+<div class="container">
+  {% assign projects = site.projects | sort: "order" %}
+  <ul class="project-grid">
+    {% for project in projects %}
+      {% include project-card.html %}
+    {% endfor %}
+  </ul>
+</div>

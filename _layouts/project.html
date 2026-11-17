@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article class="article project-article">
+  <header class="article-header">
+    <p class="article-path"><a href="{{ "/projects/" | relative_url }}">~/projects</a>/{{ page.slug }}/README.md</p>
+    <h1 class="article-title">{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="project-lead">{{ page.description }}</p>{% endif %}
+
+    <dl class="project-facts">
+      {% if page.status %}<div><dt>status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+      {% if page.platforms %}<div><dt>platforms</dt><dd>{{ page.platforms | join: " · " }}</dd></div>{% endif %}
+      {% if page.stack %}<div><dt>built with</dt><dd>{{ page.stack | join: " · " }}</dd></div>{% endif %}
+      {% if page.started %}<div><dt>started</dt><dd><time datetime="{{ page.started | date_to_xmlschema }}">{{ page.started | date: "%Y-%m" }}</time></dd></div>{% endif %}
+    </dl>
+
+    {% if page.links %}
+      <p class="project-actions">
+        {% for link in page.links %}
+          <a href="{{ link.url }}" class="button {% if forloop.first %}button-primary{% else %}button-secondary{% endif %}"{% unless link.url contains site.url %} target="_blank" rel="noopener"{% endunless %}>{{ link.label }} →</a>
+        {% endfor %}
+      </p>
+    {% endif %}
+  </header>
+
+  {% if page.cover_image %}
+    <figure class="article-cover">
+      <img src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt | default: page.title | escape }}" class="article-cover-image" width="{{ page.cover_width }}" height="{{ page.cover_height }}">
+    </figure>
+  {% endif %}
+
+  <div class="article-content">
+    {{ content }}
+  </div>
+</article>
