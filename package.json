@@ -1,0 +1,11 @@
+{
+  "name": "goodbran",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "bundle exec jekyll build && cf deploy _site"
+  },
+  "devDependencies": {
+    "cf": "^1.0.0-rc.0"
+  }
+}

@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +40,25 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
+      # Same build, also served from Cloudflare (goodbran.com).
+      # Skipped until CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
+      - name: Setup Node
+        if: env.HAS_CLOUDFLARE == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Deploy to Cloudflare
+        if: env.HAS_CLOUDFLARE == 'true'
+        run: |
+          npm ci
+          npx cf deploy _site
+        env:
+          CF_SEND_TELEMETRY: "false"
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
   deploy:
     environment:

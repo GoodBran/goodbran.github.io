@@ -6,8 +6,9 @@ description: >-
   Writing, publishing, and sharing notes.
   A personal blog about coding, music, and creativity.
 # URL settings
-# The GitHub Actions workflow auto-configures the base path during build
-url: ""
+# goodbran.com is the canonical address; goodbran.github.io serves a copy
+# whose canonical links and feed point here.
+url: "https://goodbran.com"
 baseurl: ""
 
 # Social
@@ -45,8 +46,15 @@ defaults:
     values:
       layout: "default"
 
+# Files Jekyll would otherwise skip because of the leading underscore
+include:
+  - _redirects
+
 # Exclusions
 exclude:
+  - cloudflare.config.ts
+  - package.json
+  - package-lock.json
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

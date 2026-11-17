@@ -1,0 +1,20 @@
+# Redirects from the legacy goodbran.com (Rails) URLs to this site.
+# Served by Cloudflare; GitHub Pages ignores this file.
+
+/blogs                                              /blog/  301
+/blogs/                                             /blog/  301
+/about                                              /about/ 301
+
+/blogs/markdown-syntax-showcase                     /2026/03/25/markdown-syntax-showcase/                 301
+/blogs/designing-the-favicon                        /2026/03/26/designing-the-favicon/                    301
+/blogs/continuous-deployment-with-kamal             /2026/03/27/continuous-deployment-with-kamal/         301
+/blogs/why-the-code-block-wouldnt-scroll            /2026/03/27/why-the-code-block-wouldnt-scroll/        301
+/blogs/music-notation-as-source-code                /2026/03/28/music-notation-as-source-code/            301
+/blogs/adding-newsletter-subscriptions              /2026/03/30/adding-newsletter-subscriptions/          301
+/blogs/from-lilypond-to-playable-piano              /2026/03/31/from-lilypond-to-playable-piano/          301
+/blogs/discovering-the-mutopia-project              /2026/04/03/discovering-the-mutopia-project/          301
+/blogs/moving-assets-to-cloudflare-r2               /2026/04/04/moving-assets-to-cloudflare-r2/           301
+/blogs/basic-math-symbols-for-kids                  /2026/04/05/basic-math-symbols-for-kids/              301
+/blogs/x-api-posse-and-the-cost-of-automation       /2026/04/05/x-api-posse-cost-automation/              301
+/blogs/homeaway-a-small-cli-for-switching-wifi-modes /2026/04/12/homeaway-cli-switching-wifi-modes/       301
+/blogs/kidsui-a-small-ui-kit-for-kids               /2026/04/20/kidsui-a-small-ui-kit-for-kids/           301
